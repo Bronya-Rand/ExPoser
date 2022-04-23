@@ -767,6 +767,17 @@ layeredimage natsuki base:
         attribute b3:
             "mod_assets/MPT/natsuki/natsuki_fs_eyebrows_b3.png"
 
+    ## For use if NBE assets is installed
+    # group blink if_any(["forward_face", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_e", "ee", "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
+    #         "_nat_blink_a"
+    #     attribute no_blink:
+    #         "sprite_blank"
+
+    # group blink if_any(["sad_face", "fs"]) if_not(["turned_away_face", "sad_face", "fta","ff"]):
+    #     attribute blink_a default if_not(["closed_eyes", "ce", "eyes_d", "eyes_e", "eyes_f", "ed", "ee", "ef", "nose5", "full_face_blush", "e4","e5","e6","n5","bful"]):
+    #         "_nat_blink_s_a"
+
 layeredimage natsuki cross:
     at Flatten
 
@@ -776,11 +787,15 @@ layeredimage natsuki cross:
     always:
         "mod_assets/MPT/natsuki/natsuki_crossed(ff)_uniform.png" if_all(["uniform"]) if_any(["face_forward", "ff"])
     always:
-        "mod_assets/MPT/natsuki/natsuki_crossed(fs)_uniform.png" if_all(["uniform"]) if_any(["sad_face", "turned_away_face", "fs","fta"])
+        "mod_assets/MPT/natsuki/natsuki_crossed(fs)_uniform.png" if_all(["uniform"]) if_any(["sad_face", "fs" ])
     always:
         "mod_assets/MPT/natsuki/natsuki_crossed(ff)_casual.png" if_all(["casual"]) if_any(["face_forward", "ff"])
     always:
-        "mod_assets/MPT/natsuki/natsuki_crossed(fs)_casual.png" if_all(["casual"]) if_any(["sad_face", "turned_away_face", "fs","fta"])
+        "mod_assets/MPT/natsuki/natsuki_crossed(fs)_casual.png" if_all(["casual"]) if_any(["sad_face", "fs"])
+    always:
+        "mod_assets/MPT/natsuki/natsuki_crossed(fta)_uniform.png" if_all(["uniform"]) if_any(["turned_away_face", "fta"])
+    always:
+        "mod_assets/MPT/natsuki/natsuki_crossed(fta)_casual.png" if_all(["casual"]) if_any(["turned_away_face", "fta"])
     
     group outfit:
         attribute uniform default null
@@ -845,7 +860,7 @@ layeredimage natsuki cross:
     
     group head: #This needs to render below her body for her "cross" pose.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         attribute face_forward default:
             "mod_assets/MPT/natsuki/natsuki_face_forward.png"
         attribute sad_face:
@@ -862,7 +877,7 @@ layeredimage natsuki cross:
     
     group nose if_any(["face_forward", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ###Default nose
         attribute nose default if_any(["no_blush", "nobl"]):
@@ -895,7 +910,7 @@ layeredimage natsuki cross:
     
     group mouth if_any(["face_forward", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Closed Mouths
         attribute closed_mouth default if_any(["happy", "alluring", "tense", "happ","sedu","nerv"]):
@@ -1042,7 +1057,7 @@ layeredimage natsuki cross:
     
     group eyes if_any(["face_forward", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Open eyes
         attribute open_eyes default if_any(["fine", "happy", "laughing", "curious", "neut","happ","laug","pout","curi"]):
@@ -1229,7 +1244,7 @@ layeredimage natsuki cross:
     
     group eyebrows if_any(["face_forward", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]): #eyebrows.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Default Eyebrows
         attribute brow default if_any(["fine", "aloof", "alluring", "neut","dist","sedu"]):
@@ -1248,7 +1263,7 @@ layeredimage natsuki cross:
     #Some of Natsuki's eyebrows can only be used with closed eye expressions: the following moods take advantage of this, and thus need logic to check whether the eyes are open or not.
     group eyebrows:#In case you're wondering why there's no if_all or if_not logic on this group line, it's because the attributes below explicitly use the same logic - and if you have a group and an attribute both using the same logic tag, the attribute one will COMPLETELY overwrite and ignore the group logic.  It took me way too long to figure this out.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         attribute brow default if_any(["very_angry", "vang"]) if_all(["face_forward", "open_eyes"]) if_not(["turned_away_face", "sad_face", "closed_face", "fta","fs","ce"]):
             "mod_assets/MPT/natsuki/natsuki_ff_eyebrows_b1d.png"
@@ -1286,7 +1301,7 @@ layeredimage natsuki cross:
     
     group eyebrows:
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### All eyebrows
         ### Simple Syntax
@@ -1405,7 +1420,7 @@ layeredimage natsuki cross:
     #This group is intentionally last on this list, so it will render over top of every other thing on the face.
     group special if_any(["face_forward", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         attribute special_scream:
             "mod_assets/MPT/natsuki/natsuki_face_special_scream.png"
 
@@ -1416,7 +1431,7 @@ layeredimage natsuki cross:
     
     group nose if_any(["sad_face", "fs"]) if_not(["face_forward", "turned_away_face", "ff","fta"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Default nose
         attribute nose default if_any(["no_blush", "nobl"]):
@@ -1457,7 +1472,7 @@ layeredimage natsuki cross:
     
     group mouth if_any(["sad_face", "fs"]) if_not(["face_forward", "turned_away_face", "ff","fta"]):
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Closed mouth
         attribute closed_mouth default if_any(["fine", "neut"]):
@@ -1510,7 +1525,7 @@ layeredimage natsuki cross:
     
     group eyes if_any(["sad_face", "fs"]) if_not(["face_forward", "turned_away_face", "nose5", "full_face_blush", "ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         ### Open eyes
         attribute open_eyes default if_any(["fine", "neut"]):
@@ -1587,7 +1602,7 @@ layeredimage natsuki cross:
     
     group eyebrows if_any(["sad_face", "fs"]) if_not(["face_forward", "turned_away_face", "nose5", "full_face_blush", "ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         #default brows
         attribute brow default if_any(["fine", "neut"]):
@@ -1597,7 +1612,7 @@ layeredimage natsuki cross:
     
     group eyebrows:#Required separate group definition because of additional logic for showing these particular eyebrows.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         attribute brow default if_any(["crying", "cry"]) if_all(["sad_face", "open_eyes"]) if_not(["face_forward", "turned_away_face", "nose5", "full_face_blush", "ff","fta","n5","bful","ce","closed_eyes"]):
             "mod_assets/MPT/natsuki/natsuki_fs_eyebrows_b3.png"
@@ -1611,7 +1626,7 @@ layeredimage natsuki cross:
     
     group eyebrows if_any(["sad_face", "fs"]) if_not(["face_forward", "turned_away_face", "nose5", "full_face_blush", "ff","fta","n5","bful"]): #Cannot show if full-face blush is present.
         xoffset (18)
-        yoffset (20)
+        yoffset (21)
         
         #All eyebrows - truncated tags:
         attribute b1:
@@ -1620,3 +1635,116 @@ layeredimage natsuki cross:
             "mod_assets/MPT/natsuki/natsuki_fs_eyebrows_b2.png"
         attribute b3:
             "mod_assets/MPT/natsuki/natsuki_fs_eyebrows_b3.png"
+
+    ## For use if NBE assets is installed
+    # group blink if_all(["forward_face", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
+    #     xoffset (18)
+    #     yoffset (21)
+
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_e", "ee", "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
+    #         "_nat_blink_a"
+    #     attribute no_blink:
+    #         "sprite_blank"
+
+    # group blink if_all(["sad_face", "fs"]) if_not(["turned_away_face", "sad_face", "fta","ff"]):
+    #     xoffset (18)
+    #     yoffset (22)
+
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "eyes_e", "eyes_f", "nose5", "full_face_blush", "ce","e4","e5","e6","n5","bful"]):
+    #         "_nat_blink_s_a"
+
+image sprite_blank:
+    alpha 0.0
+    "mod_assets/MPT/natsuki/_blink_am.png"
+
+image _nat_blink_a:
+    alpha 0.0
+    renpy.random.randint(20, 100)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.065
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.095
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_am.png"
+        0.015
+    repeat
+
+image _nat_blink_s_a:
+    alpha 0.0
+    renpy.random.randint(30, 60)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.065
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.095
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+        "mod_assets/MPT/natsuki/_blink_s_af.png"
+        0.035
+        "mod_assets/MPT/natsuki/_blink_s_am.png"
+        0.015
+    repeat

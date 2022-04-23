@@ -575,7 +575,7 @@ layeredimage monika base:
         attribute b3c if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
             "mod_assets/MPT/monika/monika_forward_eyebrows_b3c.png"
 
-    #This group is intentionally last on this list, so it will render over top 
+    # This group is intentionally last on this list, so it will render over top 
     # of every other thing on the face.
     group special:
         attribute special_scream:
@@ -584,6 +584,13 @@ layeredimage monika base:
         # Backwards Compatibility
         attribute s_scream:
             "mod_assets/MPT/monika/monika_forward_special_scream.png"
+    
+    ## For use if NBE assets is installed
+    # group blink:
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_t", "et", "eyes_e", "ee", "eyes_f", "ef"]):
+    #         "_mon_blink_a"
+    #     attribute no_blink:
+    #         "sprite_blank"
 
 layeredimage monika lean:
     at Flatten
@@ -819,3 +826,102 @@ layeredimage monika lean:
             "mod_assets/MPT/monika/monika_lean_eyebrows_b2.png"
         attribute b3:
             "mod_assets/MPT/monika/monika_lean_eyebrows_b3.png"
+
+    ## For use if NBE assets is installed
+    # group blink:
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "ed", "eyes_e", "ee", "nose5", "full_face_blush", "ce","e4","e5","n5", "bful"]):
+    #         "_mon_blink_l_a"
+    #     attribute no_blink:
+    #         "sprite_blank"
+
+image _mon_blink_a:
+    alpha 0.0
+    renpy.random.randint(20, 100)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        "mod_assets/MPT/monika/monika_forward_eyes_e4a.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        "mod_assets/MPT/monika/monika_forward_eyes_e4a.png"
+        0.065
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        "mod_assets/MPT/monika/monika_forward_eyes_e4a.png"
+        0.095
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        "mod_assets/MPT/monika/monika_forward_eyes_e4a.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+        "mod_assets/MPT/monika/monika_forward_eyes_e4a.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_am.png"
+        0.015
+    repeat
+
+image _mon_blink_l_a:
+    alpha 0.0
+    renpy.random.randint(30, 60)*0.1
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        "mod_assets/MPT/monika/_blink_l_af.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        "mod_assets/MPT/monika/_blink_l_af.png"
+        0.065
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        "mod_assets/MPT/monika/_blink_l_af.png"
+        0.095
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+    choice:
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        "mod_assets/MPT/monika/_blink_l_af.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        alpha 0.0
+        0.15
+        alpha 1.0
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+        "mod_assets/MPT/monika/_blink_l_af.png"
+        0.035
+        "mod_assets/MPT/monika/_blink_l_am.png"
+        0.015
+    repeat

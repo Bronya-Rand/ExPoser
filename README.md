@@ -2,6 +2,11 @@
 
 ExPoser is a WIP expression tool based off u/chronoshag's Mood Pose Tool (MPT) that attempts to fix MPT related bugs and provide a easier posing experience for Ren'Py 7 modders whether they are new to modding or not.
 
+## Features
+- New Syntaxes for newcomers and advanced users of Ren'Py 7 and/or Mood Pose Tool
+- Natural Blinking Expression Integration Support
+   > As of today, you have to install NBE's asset files (not the RPY code) onto your mod project and uncomment the `blink` group in each characters' layeredimage file in order for NBE to work.
+
 ## What has changed from MPT?
 All code in ExPoser is based off MPT and should work the same as intended for all projects except for one condition.
 
@@ -40,11 +45,14 @@ There are a lot of new syntax changes to cover so if you are interested in getti
 1. A mod you are working on.
 2. MPT 1.1.1 (for the layeredimage images)
    > Due to lack of permissions to distribute MPT assets with ExPoser, you will need MPT to copy the layeredimages folders for each character from within `the MPT ZIP file/game/mod_assets/MPT` over to ExPoser in `your mod folder/game/mod_assets/MPT`.
+3. (Optional) Natural Blinking Expressions
 
 ## Install Guide
 1. Install MPT over your mod.
 2. Open ExPoser's ZIP file, and copy all of it's assets over to your mod. Replace any files if requested.
-3. Done!
+3. (Optional) Copy the characters' folders in `the NBE ZIP folder/game/mod_assets/MPT` over to ExPoser in `your mod folder/game/mod_assets/MPT`.
+4. (If you did step 3) Uncommment the `blink` groups in each characters' layered image RPY file.
+4. Done!
 
 ## Credits
 > u/ZachmanAwesomenessII - Fixed Poses for Natsuki's `fta`/`turned_away_face` pose.

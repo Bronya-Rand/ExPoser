@@ -46,4 +46,7 @@ There are a lot of new syntax changes to cover so if you are interested in getti
 2. Open ExPoser's ZIP file, and copy all of it's assets over to your mod. Replace any files if requested.
 3. Done!
 
+## Credits
+> u/ZachmanAwesomenessII - Fixed Poses for Natsuki's `fta`/`turned_away_face` pose.
+
 Copyright 2022 GanstaKingofSA. All rights reserved. The ExPoser project is unaffiliated with the Mood Pose Tool team and Team Salvato. 

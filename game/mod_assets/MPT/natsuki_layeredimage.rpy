@@ -774,7 +774,7 @@ layeredimage natsuki base:
     #     attribute no_blink:
     #         "sprite_blank"
 
-    # group blink if_any(["sad_face", "fs"]) if_not(["turned_away_face", "sad_face", "fta","ff"]):
+    # group blink if_any(["sad_face", "fs"]) if_not(["turned_away_face", "forward_face", "fta","ff"]):
     #     attribute blink_a default if_not(["closed_eyes", "ce", "eyes_d", "eyes_e", "eyes_f", "ed", "ee", "ef", "nose5", "full_face_blush", "e4","e5","e6","n5","bful"]):
     #         "_nat_blink_s_a"
 
@@ -1637,7 +1637,7 @@ layeredimage natsuki cross:
             "mod_assets/MPT/natsuki/natsuki_fs_eyebrows_b3.png"
 
     ## For use if NBE assets is installed
-    # group blink if_all(["forward_face", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
+    # group blink if_any(["forward_face", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
     #     xoffset (18)
     #     yoffset (21)
 
@@ -1646,11 +1646,11 @@ layeredimage natsuki cross:
     #     attribute no_blink:
     #         "sprite_blank"
 
-    # group blink if_all(["sad_face", "fs"]) if_not(["turned_away_face", "sad_face", "fta","ff"]):
+    # group blink if_any(["sad_face", "fs"]) if_not(["turned_away_face", "forward_face", "fta","ff"]):
     #     xoffset (18)
     #     yoffset (22)
 
-    #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "eyes_e", "eyes_f", "nose5", "full_face_blush", "ce","e4","e5","e6","n5","bful"]):
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "eyes_e", "eyes_f", "ed", "ee", "ef", "nose5", "full_face_blush", "ce","e4","e5","e6","n5","bful"]):
     #         "_nat_blink_s_a"
 
 image sprite_blank:

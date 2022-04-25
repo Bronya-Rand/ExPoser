@@ -678,7 +678,7 @@ layeredimage natsuki base:
         attribute open_eyes default if_any(["crying", "cry"]):
             "mod_assets/MPT/natsuki/natsuki_fs_eyes_e3.png"
 
-        attribute oe default if_any(["neut"]):
+        attribute oe default if_any(["fine", "neut"]):
             "mod_assets/MPT/natsuki/natsuki_fs_eyes_e1.png"
         attribute oe default if_any(["sad"]):
             "mod_assets/MPT/natsuki/natsuki_fs_eyes_e2.png"

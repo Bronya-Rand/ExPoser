@@ -56,5 +56,7 @@ There are a lot of new syntax changes to cover so if you are interested in getti
 
 ## Credits
 > u/ZachmanAwesomenessII - Fixed Poses for Natsuki's `fta`/`turned_away_face` pose.
+> Willinisian - Natural Blinking Expressions Code
+> MPT Team - Mood Pose Tool Syntax Code
 
 Copyright 2022 GanstaKingofSA. All rights reserved. The ExPoser project is unaffiliated with the Mood Pose Tool team and Team Salvato. 

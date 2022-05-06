@@ -586,7 +586,7 @@ layeredimage sayori base:
 
     ## For use if NBE assets is installed
     # group blink:
-    #     attribute blink_a default if_not(["closed_eyes", "eyes_o","eyes_p","eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo","ep","eq", "er", "es", "et", "eyes_e", "ee" "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4f", "e4e", "e1e", "e1f"]):
+    #     attribute blink_a default if_not(["closed_eyes", "eyes_o","eyes_p","eyes_q", "eyes_r", "eyes_s", "eyes_t", "eo","ep","eq", "er", "es", "et", "eyes_e", "ee" "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4f", "e4e", "e1e", "e1f"]):
     #         "_say_blink_a"
     #     attribute no_blink:
     #         "sprite_blank"

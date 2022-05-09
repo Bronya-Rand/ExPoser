@@ -1,29 +1,62 @@
 
 init -1:
-    define persistent.enable_auto_focus = False # Enables/Disables Autofocus
-    define persistent.enable_auto_mouth = False # Enables/Disables Automouth
+    default persistent.enable_auto_focus = True # Enables/Disables Autofocus
+    default persistent.enable_auto_mouth = False # Enables/Disables Automouth
+    default persistent.enable_breathing = True # Enables/Disables Breathing
+    default char_list = ["sayori", "natsuki", "yuri", "monika"]
 
 init python:
-    
-    def auto_focus(event, interact=True, **kwargs):
-        char = renpy.get_say_image_tag() # We grab who is the speaker
+    import random
+
+    def auto_focus(char, breath_speed, event, interact=True, **kwargs):
         if char is None: # If this is the narrator we exit this function
             return
 
-        c = renpy.display.core.displayable_by_tag("master", char) # Borrowed from MPT to get the current sprite info
+        c = renpy.display.core.displayable_by_tag("master", char.lower()) # Borrowed from MPT to get the current sprite info
+        at_list = []
+
         if event == "begin": # If character is speaking show focus
-            if persistent.enable_auto_mouth: renpy.show(char + " om", at_list=[focus(c.xpos)])
-            else: renpy.show(char, at_list=[focus(c.xpos)])
+            if persistent.enable_breathing:
+                at_list.append(fbreathe(c.xpos, c.zoom, breath_speed))
+            else:
+                at_list.append(focus(c.xpos))
+            if persistent.enable_auto_mouth: 
+                char += " om"
         elif event == "end": # If character has stopped speaking, show tcommon (normal)
-            if persistent.enable_auto_mouth: renpy.show(char + " cm", at_list=[tcommon(c.xpos)])
-            else: renpy.show(char, at_list=[tcommon(c.xpos)])
+            if persistent.enable_breathing:
+                at_list.append(tbreathe(c.xpos, c.zoom, breath_speed))
+            else:
+                at_list.append(tcommon(c.xpos))
+            if persistent.enable_auto_mouth:
+                char += " cm"
+        renpy.show(char.lower(), at_list=at_list)
 
     if persistent.enable_auto_focus:
-        # This is more better than doing every callback per character.
-        # If you want to do it per character, comment this out and type this instead
-        # X.display_args["callback"] = auto_focus 
-        #
-        # Replace "X" with your characters' var
-        config.all_character_callbacks.append(auto_focus)
-    else:
-        config.all_character_callbacks = []
+        from functools import partial
+        s_af_callback = partial(auto_focus,"sayori", round(random.uniform(1.4, 1.5), 2))
+        n_af_callback = partial(auto_focus,"natsuki", round(random.uniform(1.4, 1.5), 2))
+        m_af_callback = partial(auto_focus,"monika", round(random.uniform(1.4, 1.5), 2))
+        y_af_callback = partial(auto_focus,"yuri", round(random.uniform(1.4, 1.5), 2))
+
+        s.display_args["callback"] = s_af_callback 
+        n.display_args["callback"] = n_af_callback 
+        y.display_args["callback"] = y_af_callback 
+        m.display_args["callback"] = m_af_callback 
+
+transform fbreathe(x=640, z=0.8, bs):
+    xcenter x yoffset 0 zoom z alpha 1.00 yanchor 1.0 ypos 1.03
+    parallel:
+        animation
+        easein bs zoom .85 #1.5 zoom .85
+        pause 0.1
+        easeout 1.5 zoom .84
+        repeat
+
+transform tbreathe(x=640, z=0.8, bs):
+    xcenter x yoffset 0 zoom z alpha 1.00 yanchor 1.0 ypos 1.03
+    parallel:
+        animation
+        easein bs zoom .81 #1.5 zoom .81
+        pause 0.1
+        easeout 1.5 zoom .8
+        repeat

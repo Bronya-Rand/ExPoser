@@ -1,3 +1,6 @@
+
+default persistent.enable_nbe = True
+
 init python:
     def clear_tag(character, target='master'):
         if not isinstance(character, str): 

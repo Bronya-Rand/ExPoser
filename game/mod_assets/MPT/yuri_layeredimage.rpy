@@ -681,7 +681,7 @@ layeredimage yuri base:
     ## For use if NBE assets is installed
     # group blink:
     #     attribute blink_a default if_not(["closed_eyes", "ce","eyes_o","eyes_p","eyes_q","eyes_r","eyes_s","eyes_t", "eyes_e", "eyes_f","eo","ep","eq","er","es","et", "ee", "ef","e4a","e4b","e4c","e4d","e4f","e4e","e1e","e1f"]):
-    #         "_yur_blink_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_yur_blink_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 
@@ -924,7 +924,7 @@ layeredimage yuri shy:
     ## For use if NBE assets is installed
     # group blink:
     #     attribute blink_a default if_not(["closed_eyes", "eyes_e", "eyes_f", "nose5", "full_face_blush", "ce","e5","e6","n5", "bful"]):
-    #         "_yur_blink_s_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_yur_blink_s_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 

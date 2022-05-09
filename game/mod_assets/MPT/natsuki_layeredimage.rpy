@@ -770,13 +770,13 @@ layeredimage natsuki base:
     ## For use if NBE assets is installed
     # group blink if_any(["forward_face", "ff"]) if_not(["turned_away_face", "sad_face", "fta","fs"]):
     #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_e", "ee", "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
-    #         "_nat_blink_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_nat_blink_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 
     # group blink if_any(["sad_face", "fs"]) if_not(["turned_away_face", "forward_face", "fta","ff"]):
     #     attribute blink_a default if_not(["closed_eyes", "ce", "eyes_d", "eyes_e", "eyes_f", "ed", "ee", "ef", "nose5", "full_face_blush", "e4","e5","e6","n5","bful"]):
-    #         "_nat_blink_s_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_nat_blink_s_a", True, "sprite_blank")
 
 layeredimage natsuki cross:
     at Flatten
@@ -1642,7 +1642,7 @@ layeredimage natsuki cross:
     #     yoffset (21)
 
     #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_e", "ee", "eyes_f", "ef", "ce","e4a","e4b","e4c", "e4d", "e4e", "e1e", "e1f"]):
-    #         "_nat_blink_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_nat_blink_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 
@@ -1651,7 +1651,7 @@ layeredimage natsuki cross:
     #     yoffset (22)
 
     #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "eyes_e", "eyes_f", "ed", "ee", "ef", "nose5", "full_face_blush", "ce","e4","e5","e6","n5","bful"]):
-    #         "_nat_blink_s_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_nat_blink_s_a", True, "sprite_blank")
 
 image sprite_blank:
     alpha 0.0

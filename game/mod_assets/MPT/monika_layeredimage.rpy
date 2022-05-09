@@ -588,7 +588,7 @@ layeredimage monika base:
     ## For use if NBE assets is installed
     # group blink:
     #     attribute blink_a default if_not(["closed_eyes", "eyes_o", "eo", "eyes_p", "ep", "eyes_q", "eq", "eyes_r", "er", "eyes_s", "es", "eyes_t", "et", "eyes_e", "ee", "eyes_f", "ef", "ce","e4a","e4b","e4c","e4d","e4f","e4e","e1e","e1f"]):
-    #         "_mon_blink_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_mon_blink_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 
@@ -830,7 +830,7 @@ layeredimage monika lean:
     ## For use if NBE assets is installed
     # group blink:
     #     attribute blink_a default if_not(["closed_eyes", "eyes_d", "ed", "eyes_e", "ee", "nose5", "full_face_blush", "ce","e4","e5","n5", "bful"]):
-    #         "_mon_blink_l_a"
+    #         ConditionSwitch("persistent.enable_nbe", "_mon_blink_l_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
 

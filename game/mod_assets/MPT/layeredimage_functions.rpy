@@ -12,13 +12,13 @@ init python:
 
     # Better cleaning
     def mref(target="master"):
-        clear_tag("monika", target)
+        return#clear_tag("monika", target)
     
     def sref(target="master"):
-        clear_tag("sayori", target)
+        return#clear_tag("sayori", target)
     
     def nref(target="master"):
-        clear_tag("natsuki", target)
+        return#clear_tag("natsuki", target)
     
     def yref(target="master"):
-        clear_tag("yuri", target)
+        return#clear_tag("yuri", target)

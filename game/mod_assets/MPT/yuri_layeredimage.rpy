@@ -679,11 +679,11 @@ layeredimage yuri base:
             "mod_assets/MPT/yuri/yuri_turned_special_scream.png"
 
     ## For use if NBE assets is installed
-    # group blink:
-    #     attribute blink_a default if_not(["closed_eyes", "ce","eyes_o","eyes_p","eyes_q","eyes_r","eyes_s","eyes_t", "eyes_e", "eyes_f","eo","ep","eq","er","es","et", "ee", "ef","e4a","e4b","e4c","e4d","e4f","e4e","e1e","e1f"]):
-    #         "_yur_blink_a"
-    #     attribute no_blink:
-    #         "sprite_blank"
+    group blink:
+        attribute blink_a default if_not(["closed_eyes", "ce","eyes_o","eyes_p","eyes_q","eyes_r","eyes_s","eyes_t", "eyes_e", "eyes_f","eo","ep","eq","er","es","et", "ee", "ef","e4a","e4b","e4c","e4d","e4f","e4e","e1e","e1f"]):
+            "_yur_blink_a"
+        attribute no_blink:
+            "sprite_blank"
 
 layeredimage yuri shy:
     at Flatten
@@ -922,11 +922,11 @@ layeredimage yuri shy:
             "mod_assets/MPT/yuri/yuri_shy_eyebrows_b3.png"
 
     ## For use if NBE assets is installed
-    # group blink:
-    #     attribute blink_a default if_not(["closed_eyes", "eyes_e", "eyes_f", "nose5", "full_face_blush", "ce","e5","e6","n5", "bful"]):
-    #         "_yur_blink_s_a"
-    #     attribute no_blink:
-    #         "sprite_blank"
+    group blink:
+        attribute blink_a default if_not(["closed_eyes", "eyes_e", "eyes_f", "nose5", "full_face_blush", "ce","e5","e6","n5", "bful"]):
+            "_yur_blink_s_a"
+        attribute no_blink:
+            "sprite_blank"
 
 image _yur_blink_a:
     alpha 0.0

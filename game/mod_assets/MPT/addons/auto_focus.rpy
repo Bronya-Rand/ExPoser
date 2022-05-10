@@ -49,14 +49,14 @@ transform fbreathe(x=640, z=0.8, bs):
         animation
         easein bs zoom .85 #1.5 zoom .85
         pause 0.1
-        easeout 1.5 zoom .84
+        easeout 1.5 zoom .849
         repeat
 
 transform tbreathe(x=640, z=0.8, bs):
     xcenter x yoffset 0 zoom z alpha 1.00 yanchor 1.0 ypos 1.03
     parallel:
         animation
-        easein bs zoom .81 #1.5 zoom .81
+        easein bs zoom .801 #1.5 zoom .81
         pause 0.1
         easeout 1.5 zoom .8
         repeat

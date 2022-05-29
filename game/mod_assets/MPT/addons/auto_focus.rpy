@@ -1,29 +1,35 @@
 
 init -1:
-    define persistent.enable_auto_focus = False # Enables/Disables Autofocus
-    define persistent.enable_auto_mouth = False # Enables/Disables Automouth
+    default persistent.enable_auto_focus = True # Enables/Disables Autofocus
+    default persistent.enable_auto_mouth = False # Enables/Disables Automouth
 
-init python:
-    
-    def auto_focus(event, interact=True, **kwargs):
-        char = renpy.get_say_image_tag() # We grab who is the speaker
-        if char is None: # If this is the narrator we exit this function
-            return
+init 1 python:
 
-        c = renpy.display.core.displayable_by_tag("master", char) # Borrowed from MPT to get the current sprite info
-        if event == "begin": # If character is speaking show focus
-            if persistent.enable_auto_mouth: renpy.show(char + " om", at_list=[focus(c.xpos)])
-            else: renpy.show(char, at_list=[focus(c.xpos)])
-        elif event == "end": # If character has stopped speaking, show tcommon (normal)
-            if persistent.enable_auto_mouth: renpy.show(char + " cm", at_list=[tcommon(c.xpos)])
-            else: renpy.show(char, at_list=[tcommon(c.xpos)])
+    class AutoFocus(object):
 
-    if persistent.enable_auto_focus:
-        # This is more better than doing every callback per character.
-        # If you want to do it per character, comment this out and type this instead
-        # X.display_args["callback"] = auto_focus 
-        #
-        # Replace "X" with your characters' var
-        config.all_character_callbacks.append(auto_focus)
-    else:
-        config.all_character_callbacks = []
+        def __init__(self, tag):
+            self.tag = tag.lower()
+
+        def __call__(self, event, **kwargs):
+            if not renpy.showing(self.tag):
+                return
+            
+            c = renpy.display.core.displayable_by_tag("master", self.tag)
+            char = self.tag
+            at_list = []
+            print(self.tag + ": " + str(renpy.get_at_list(self.tag)))
+
+            if event == "begin": # If character is speaking show focus
+                at_list.append(focus(c.xpos))
+                if persistent.enable_auto_mouth: 
+                    char += " om"
+            elif event == "end": # If character has stopped speaking, show tcommon (normal)
+                at_list.append(tcommon(c.xpos))
+                if persistent.enable_auto_mouth:
+                    char += " cm"
+            renpy.show(char, at_list=at_list)
+
+    s.display_args["callback"] = AutoFocus("sayori") 
+    n.display_args["callback"] = AutoFocus("natsuki") 
+    y.display_args["callback"] = AutoFocus("yuri") 
+    m.display_args["callback"] = AutoFocus("monika")  

@@ -11,8 +11,9 @@ init python:
         def __init__(self, char):
             self.char = char.lower()
 
-        def __call__(self):
-            c = renpy.display.core.displayable_by_tag("master", self.char) # Borrowed from MPT to get the current sprite info
+        def __call__(self, event, **kwargs):
+            char = self.char
+            c = renpy.display.core.displayable_by_tag("master", char) # Borrowed from MPT to get the current sprite info
             at_list = []
 
             if event == "begin": # If character is speaking show focus

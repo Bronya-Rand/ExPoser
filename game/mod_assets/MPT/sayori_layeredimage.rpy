@@ -480,20 +480,28 @@ layeredimage sayori base:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1c.png"
         attribute brow default if_any(["annoyed", "anno","pout"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1d.png"
-        attribute brow default if_any(["angry", "angr","vang"]):
+        attribute brow default if_any(["very_angry","angry", "angr","vang"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1e.png"
         attribute brow default if_any(["curious", "doubtful", "curi","doub"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b1f.png"
         
         ### The following brows are for moods that differ between open and closed eyes:
-        attribute brow default if_any(["aloof", "dist"]) if_all(["open_eyes"]) if_not(["closed_eyes", "ce"]):
+        attribute brow default if_any(["aloof", "dist"]) if_all(["open_eyes"]) if_not(["closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
-        attribute brow default if_any(["aloof", "dist"]) if_all(["closed_eyes"]) if_not(["open_eyes", "oe"]):
+        attribute brow default if_any(["aloof", "dist"]) if_all(["closed_eyes"]) if_not(["open_eyes"]):
+            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
+        attribute brow default if_any(["aloof", "dist"]) if_all(["open_eyes"]) if_not(["ce"]):
+            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
+        attribute brow default if_any(["aloof", "dist"]) if_all(["closed_eyes"]) if_not(["oe"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
         
-        attribute brow default if_any(["aloof", "dist"]) if_all(["oe"]) if_not(["closed_eyes", "ce"]):
+        attribute brow default if_any(["aloof", "dist"]) if_all(["oe"]) if_not(["closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
-        attribute brow default if_any(["aloof", "dist"]) if_all(["ce"]) if_not(["open_eyes", "oe"]):
+        attribute brow default if_any(["aloof", "dist"]) if_all(["ce"]) if_not(["open_eyes"]):
+            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
+        attribute brow default if_any(["aloof", "dist"]) if_all(["oe"]) if_not(["ce"]):
+            "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2a.png"
+        attribute brow default if_any(["aloof", "dist"]) if_all(["ce"]) if_not(["oe"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
         
         ### All eyebrows
@@ -516,11 +524,11 @@ layeredimage sayori base:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2b.png"
         attribute brow_i:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2c.png"
-        attribute brow_j if_any(["e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute brow_j if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es","e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3a.png"
-        attribute brow_k if_any(["e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute brow_k if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es","e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3b.png"
-        attribute brow_l if_any(["e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute brow_l if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es","e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
         
         ### New MPT Syntax (b[A-Z])
@@ -542,11 +550,11 @@ layeredimage sayori base:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2b.png"
         attribute bi:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2c.png"
-        attribute bj if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute bj if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3a.png"
-        attribute bk if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute bk if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3b.png"
-        attribute bl if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute bl if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
 
         ### Old MPT Syntax (bX[A-Z])
@@ -568,11 +576,11 @@ layeredimage sayori base:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2b.png"
         attribute b2c:
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b2c.png"
-        attribute b3a if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute b3a if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3a.png"
-        attribute b3b if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute b3b if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3b.png"
-        attribute b3c if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eyes_t", "eyes_u", "eo", "ep", "eq", "er", "es", "et", "eu", "e4a","e4b","e4c","e4d","e4e","ce"]):
+        attribute b3c if_any(["eyes_o", "eyes_p", "eyes_q", "eyes_r", "eyes_s", "eo", "ep", "eq", "er", "es", "e4a","e4b","e4c","e4d","e4e","ce", "closed_eyes"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
     
     #This group is intentionally last on this list, so it will render over top 

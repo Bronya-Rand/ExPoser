@@ -5,7 +5,7 @@ init -1:
 
 init 1 python:
 
-    class AutoFocus(object):
+    class AutoFocus:
 
         def __init__(self, tag):
             self.tag = tag.lower()
@@ -17,7 +17,6 @@ init 1 python:
             c = renpy.display.core.displayable_by_tag("master", self.tag)
             char = self.tag
             at_list = []
-            print(self.tag + ": " + str(renpy.get_at_list(self.tag)))
 
             if event == "begin": # If character is speaking show focus
                 at_list.append(focus(c.xpos))
@@ -28,8 +27,9 @@ init 1 python:
                 if persistent.enable_auto_mouth:
                     char += " cm"
             renpy.show(char, at_list=at_list)
-
-    s.display_args["callback"] = AutoFocus("sayori") 
-    n.display_args["callback"] = AutoFocus("natsuki") 
-    y.display_args["callback"] = AutoFocus("yuri") 
-    m.display_args["callback"] = AutoFocus("monika")  
+            
+    if persistent.enable_auto_focus:
+        s.display_args["callback"] = AutoFocus("sayori") 
+        n.display_args["callback"] = AutoFocus("natsuki") 
+        y.display_args["callback"] = AutoFocus("yuri") 
+        m.display_args["callback"] = AutoFocus("monika")  

@@ -1,85 +1,38 @@
 
+init python:
+    from store import exp_core
+    m_paths = exp_core.ExPPaths("mod_assets/ExP/monika")
+
 layeredimage monika base:
     at Flatten
     
-    always "mod_assets/MPT/monika/monika_forward_facebase.png" # We always use the basic face.
+    # Since this tends to be just one asset, just put it in the base dir.
+    always m_paths + "/facebase.png"
     
+    # Outfits. Might consider changing this as a 1 outfit file
     group outfit:
         attribute uniform null
         attribute casual null
     
-    group mood: 
-        attribute fine default null
-        attribute angry null 
-        attribute annoyed null 
-        attribute crying null
-        attribute curious null 
-        attribute aloof null 
-        attribute doubtful null 
-        attribute flustered null
-        attribute happy null
-        attribute laughing null
-        attribute lightly_amazed null 
-        attribute tense null
-        attribute panicked null 
-        attribute sad null
-        attribute alluring null 
-        attribute shocked null
-        attribute very_angry null
-        attribute very_amazed null 
-        attribute unease null
-        attribute yandere null
-
-        # Backwards Compatiblility (Old Syntax)
-        attribute neut null # neutral
-        attribute angr null # angry
-        attribute anno null # annoyed
-        attribute cry null  # crying
-        attribute curi null # curious
-        attribute dist null # distant
-        attribute doub null # doubtful
-        attribute flus null # flustered
-        attribute happ null # happy
-        attribute laug null # laughing
-        attribute lsur null # surprised (lightly)
-        attribute nerv null # nervous
-        attribute pani null # panicked
-        attribute pout null # pouting
-        attribute sad null  # sad
-        attribute sedu null # seductive
-        attribute shoc null # shocked
-        attribute vang null # VERY angry
-        attribute vsur null # surprised (very)
-        attribute worr null # worried
-        attribute yand null # yandere
-    
-    # These are intentionally separate from mood; the idea being that these aren't
-    # consciously controlled by the character - rather, they're a result of their 
-    # emotions making them blush/sweat/etc.
-    group blush: 
-        attribute no_blush default null
-        attribute awkward null 
-        attribute blushing null 
-        attribute awkward_blushing null
-
-        # Backwards Compatibility
-        attribute nobl default null # Default, no blush.
-        attribute awkw null # awkward.  defaults for n
-        attribute blus null # blushing.  defaults for n
-        attribute blaw null # blushing and awkward.  defaults for n
+    # (Formerly Blush) Cheek Expressions
+    group cheek: 
+        attribute norm default null # Normal
+        attribute eh null # Awkward/Eh.
+        attribute shy null # Blushing (shy used as synomyn)
+        attribute shyeh null # Both Shy and Awkward
     
     ### Left Half
     group left:
         anchor (0,0)
         subpixel True
         attribute ldown default if_any(["uniform"]):
-            "mod_assets/MPT/monika/monika_forward_uniform_left_down.png"
+            m_paths + "/left/uniform_left_down.png"
         attribute ldown default if_any(["casual"]):
-            "mod_assets/MPT/monika/monika_forward_casual_left_down.png"
+            m_paths + "/left/casual_left_down.png"
         attribute lpoint if_any(["uniform"]):
-            "mod_assets/MPT/monika/monika_forward_uniform_left_point.png"
+            m_paths + "/left/uniform_left_point.png"
         attribute lpoint if_any(["casual"]):
-            "mod_assets/MPT/monika/monika_forward_casual_left_point.png"
+            m_paths + "/left/casual_left_point.png"
     
     ### Right Half
     group right:

@@ -73,10 +73,6 @@ layeredimage natsuki base:
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_hip.png"
         attribute lhip if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_left_hip.png"
-        attribute lpoint if_any(["uniform"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_point.png"
-        attribute lpoint if_any(["casual"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_casual_left_point.png"
     
     group right:
         attribute rdown default if_any(["uniform"]):

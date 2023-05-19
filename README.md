@@ -33,7 +33,7 @@ There are a lot of syntax to cover so if you are interested in getting started, 
 
 ## Install Guide
 1. Open ExPoser's ZIP file, and copy all of it's assets over to your mod. Replace any files if requested.
-2. (Optional) Copy the characters' folders in `the NBE ZIP folder/game/mod_assets/MPT` over to ExPoser in `your mod folder/game/mod_assets/MPT`.
+2. (Optional) Copy the files in each characters' folders in `the NBE ZIP folder/game/mod_assets/MPT/<character>` over to ExPoser in `your mod folder/game/mod_assets/ExP/<character>/blinks`.
 3. (If you did step 3) Uncommment the `blink` groups in each characters' layered image RPY file.
 4. Done!
 

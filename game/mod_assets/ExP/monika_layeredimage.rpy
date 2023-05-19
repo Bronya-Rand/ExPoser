@@ -26,26 +26,26 @@ layeredimage monika base:
         anchor (0,0)
         subpixel True
         attribute ldown default if_any(["uniform"]):
-            m_paths + "/left/uniform_left_down.png"
+            m_paths + "/left/uniform_ldown.png"
         attribute ldown default if_any(["casual"]):
-            m_paths + "/left/casual_left_down.png"
+            m_paths + "/left/casual_ldown.png"
         attribute lpoint if_any(["uniform"]):
-            m_paths + "/left/uniform_left_point.png"
+            m_paths + "/left/uniform_lpoint.png"
         attribute lpoint if_any(["casual"]):
-            m_paths + "/left/casual_left_point.png"
+            m_paths + "/left/casual_lpoint.png"
     
     ### Right Half
     group right:
         anchor (0,0)
         subpixel True
         attribute rdown default if_any(["uniform"]):
-            "mod_assets/MPT/monika/monika_forward_uniform_right_down.png"
+            m_paths + "/right/uniform_rdown.png"
         attribute rdown default if_any(["casual"]):
-            "mod_assets/MPT/monika/monika_forward_casual_right_down.png"
+            m_paths + "/right/casual_rdown.png"
         attribute rhip if_any(["uniform"]):
-            "mod_assets/MPT/monika/monika_forward_uniform_right_hip.png"
+            m_paths + "/right/uniform_rhip.png"
         attribute rhip if_any(["casual"]):
-            "mod_assets/MPT/monika/monika_forward_casual_right_hip.png"
+            m_paths + "/right/casual_rhip.png"
     
     group nose:
         # Default nose

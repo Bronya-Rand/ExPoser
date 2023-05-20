@@ -25,10 +25,10 @@ layeredimage sayori base:
             s_paths + "/base/body/uniform_ldown.png"
         attribute ldown default if_any(["casual"]):
             s_paths + "/base/body/casual_ldown.png"
-        attribute lpoint if_any(["uniform"]):
-            s_paths + "/base/body/uniform_lpoint.png"
+        attribute lup if_any(["uniform"]):
+            s_paths + "/base/body/uniform_lup.png"
         attribute lpoint if_any(["casual"]):
-            s_paths + "/base/body/casual_lpoint.png"
+            s_paths + "/base/body/casual_luo.png"
     
     # Right Half
     group right:
@@ -36,10 +36,10 @@ layeredimage sayori base:
             s_paths + "/base/body/uniform_rdown.png"
         attribute rdown default if_any(["casual"]):
             s_paths + "/base/body/casual_rdown.png"
-        attribute rhip if_any(["uniform"]):
-            s_paths + "/base/body/uniform_rhip.png"
-        attribute rhip if_any(["casual"]):
-            s_paths + "/base/body/casual_rhip.png"
+        attribute rup if_any(["uniform"]):
+            s_paths + "/base/body/uniform_rup.png"
+        attribute rup if_any(["casual"]):
+            s_paths + "/base/body/casual_rup.png"
     
     # Nose
     group nose:

@@ -216,330 +216,83 @@ layeredimage sayori base:
 layeredimage sayori tap: 
     at Flatten
 
-    always "mod_assets/MPT/sayori/sayori_tapping_facebase.png"
+    always s_paths + "/tap_facebase.png"
 
     group outfit:
         attribute uniform default null
         attribute casual null
-    
-    group mood:
-        attribute tense default null
-        attribute angry null 
-        attribute aloof null 
-        attribute fine null 
 
-        attribute nerv default null #nervous
-        attribute angr null #angry
-        attribute dist null #distant
-        attribute neut null #neutral
-        attribute pout null #pouting
-
-    group blush: #Have to separate these out, they can't share moods.
-        attribute no_blush default null
-        attribute awkward null 
-        attribute blushing null 
-        attribute awkward_blushing null 
-        attribute full_face_blush null 
-
-        attribute nobl default null #no blush applied.
-        attribute awkw null #awkward.  defaults for n
-        attribute blus null #blushing.  defaults for n
-        attribute blaw null #blushing AND awkward.  defaults for n
-        attribute bful null #full face blush.
+    group cheek:
+        attribute norm default null # Normal
+        attribute eh null # Awkward/Eh.
+        attribute shy null # Blushing (shy used as synomyn)
+        attribute shyeh null # Both Shy and Awkward
+        attribute vshy null # full face blush.
     
     group body:
         attribute uniform default if_any(["uniform"]):
-            "mod_assets/MPT/sayori/sayori_tapping_uniform_bodybase.png"
+            s_paths + "tap/body/uniform_body.png"
         attribute casual default if_any(["casual"]):
-            "mod_assets/MPT/sayori/sayori_tapping_casual_bodybase.png"
+            s_paths + "tap/body/casual_body.png"
 
     group nose:
-        ### Default nose
-        attribute nose default if_any(["no_blush", "nobl"]): #default nose
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n1.png"
-        attribute nose default if_any(["awkward", "awkw"]): #default nose when "awkward"
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n2.png"
-        attribute nose default if_any(["blushing", "blus"]): #default nose when "blushing"
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n3.png"
-        attribute nose default if_any(["awkward_blushing", "blaw"]): #default nose when "blushing" and "awkward"
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n4.png"
-        attribute nose default if_any(["full_face_blush", "bful"]): #default nose when "blushing" and "awkward"
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n5.png"
-        
-        ### All noses
-        ### Simple Syntax
-        attribute nose1:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n1.png"
-        attribute nose2:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n2.png"
-        attribute nose3:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n3.png"
-        attribute nose4:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n4.png"
-        attribute nose5:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n5.png"
+        attribute nose default if_any(["norm"]): #default nose
+            m_paths + "/lean/nose/nose1.png"
+        attribute nose default if_any(["eh"]): #default nose when "awkward"
+            m_paths + "/lean/nose/nose2.png"
+        attribute nose default if_any(["shy"]): #default nose when "blushing"
+            m_paths + "/lean/nose/nose3.png"
+        attribute nose default if_any(["shyeh"]): #default nose when both "blushing" and "awkward"
+            m_paths + "/lean/nose/nose4.png"
+        attribute nose default if_any(["vshy"]): #full face blush, obscures eyes/eyebrows.
+            m_paths + "/lean/nose/nose5.png"
 
-        ### Old MPT Syntax
-        attribute n1:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n1.png"
-        attribute n2:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n2.png"
-        attribute n3:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n3.png"
-        attribute n4:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n4.png"
-        attribute n5:
-            "mod_assets/MPT/sayori/sayori_tapping_nose_n5.png"
+        attribute nose1:
+            m_paths + "/lean/nose/nose1.png"
+        attribute nose2:
+            m_paths + "/lean/nose/nose2.png"
+        attribute nose3:
+            m_paths + "/lean/nose/nose3.png"
+        attribute nose4:
+            m_paths + "/lean/nose/nose4.png"
+        attribute nose5:
+            m_paths + "/lean/nose/nose5.png"
     
     group mouth:
-        ### Closed Mouths
-        attribute closed_mouth default if_any(["pout"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m2.png"
-        attribute closed_mouth default if_any(["fine", "tense", "angry", "aloof", "neut","nerv","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m3.png"
-
-        attribute cm default if_any(["pout"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m2.png"
-        attribute cm default if_any(["fine", "tense", "angry", "aloof", "neut","nerv","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m3.png"
-        
-        ### Open Mouths
-        attribute open_mouth if_any(["tense", "nerv"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m1.png"
-        attribute open_mouth if_any(["fine", "angry", "aloof", "neut","pout","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m4.png"
-
-        attribute om if_any(["tense", "nerv"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m1.png"
-        attribute om if_any(["fine", "angry", "aloof", "neut","pout","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m4.png"
-        
-        ### All mouths
-        ### Simple Syntax
         attribute mouth_a:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m1.png"
+            m_paths + "/lean/mouth/mouth_a.png"
         attribute mouth_b:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m2.png"
+            m_paths + "/lean/mouth/mouth_b.png"
         attribute mouth_c:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m3.png"
+            m_paths + "/lean/mouth/mouth_c.png"
         attribute mouth_d:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m4.png"
-
-        ### New MPT Syntax    
-        attribute ma:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m1.png"
-        attribute mb:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m2.png"
-        attribute mc:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m3.png"
-        attribute md:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m4.png"
-
-        ### Old MPT Syntax
-        attribute m1:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m1.png"
-        attribute m2:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m2.png"
-        attribute m3:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m3.png"
-        attribute m4:
-            "mod_assets/MPT/sayori/sayori_tapping_mouth_m4.png"
+            m_paths + "/lean/mouth/mouth_d.png"
     
-    group eyes if_not(["nose5", "full_face_blush", "n5","bful"]):
-        ### Open eyes
-        attribute open_eyes default if_any(["fine", "tense", "neut","nerv"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e1.png"
-        attribute open_eyes default if_any(["aloof", "pout","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e2.png"
-        attribute open_eyes default if_any(["angry", "angr"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e5.png"
-
-        attribute oe default if_any(["fine", "tense", "neut","nerv"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e1.png"
-        attribute oe default if_any(["aloof", "pout","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e2.png"
-        attribute oe default if_any(["angry", "angr"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e5.png"
-        
-        ### Closed eyes
-        attribute closed_eyes if_any(["fine", "tense", "angry", "aloof", "neut","nerv","pout","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e6.png"
-
-        attribute ce if_any(["fine", "tense", "angry", "aloof", "neut","nerv","pout","angr","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e6.png"
-        
-        ### All eyes
-        ### Simple Syntax
+    group eyes if_not(["nose5", "vshy"]): #Cannot show if full-face blush is present.
         attribute eyes_a:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e1.png"
+            m_paths + "/lean/eyes/eyes_a.png"
         attribute eyes_b:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e2.png"
+            m_paths + "/lean/eyes/eyes_b.png"
         attribute eyes_c:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e3.png"
+            m_paths + "/lean/eyes/eyes_c.png"
         attribute eyes_d:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e4.png"
+            m_paths + "/lean/eyes/eyes_d.png"
         attribute eyes_e:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e5.png"
+            m_paths + "/lean/eyes/eyes_e.png"
         attribute eyes_f:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e6.png"
-
-        ### New MPT Syntax
-        attribute ea:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e1.png"
-        attribute eb:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e2.png"
-        attribute ec:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e3.png"
-        attribute ed:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e4.png"
-        attribute ee:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e5.png"
-        attribute ef:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e6.png"
-
-        ### Old MPT Syntax
-        attribute e1:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e1.png"
-        attribute e2:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e2.png"
-        attribute e3:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e3.png"
-        attribute e4:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e4.png"
-        attribute e5:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e5.png"
-        attribute e6:
-            "mod_assets/MPT/sayori/sayori_tapping_eyes_e6.png"
+            m_paths + "/lean/eyes/eyes_f.png"
     
-    group eyebrows if_not(["nose5", "full_face_blush", "n5","bful"]):
-        ### Default Eyebrows
-        attribute brow default if_any(["fine", "neut"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b3.png"
-        attribute brow default if_any(["tense", "aloof", "nerv","dist"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b1.png"
-        attribute brow default if_any(["angry", "pout","angr"]):
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b2.png"
-        
-        ### All eyebrows
-        ### Simple Syntax
+    group eyebrows if_not(["nose5", "vshy"]): #Cannot show if full-face blush is present.
         attribute brow_a:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b1.png"
+            m_paths + "/lean/eyebrows/eyebrows_a.png"
         attribute brow_b:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b2.png"
+            m_paths + "/lean/eyebrows/eyebrows_b.png"
         attribute brow_c:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b3.png"
-
-        ### New MPT Syntax
-        attribute ba:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b1.png"
-        attribute bb:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b2.png"
-        attribute bc:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b3.png"
-
-        ### Old MPT Syntax
-        attribute b1:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b1.png"
-        attribute b2:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b2.png"
-        attribute b3:
-            "mod_assets/MPT/sayori/sayori_tapping_eyebrows_b3.png"
+            m_paths + "/lean/eyebrows/eyebrows_c.png"
     
     ## For use if NBE assets is installed
     # group blink:
-    #     attribute blink_a default if_not(["closed_eyes", "ef", "eyes_f", "nose5", "full_face_blush", "ce","e6","n5","bful"]):
+    #     attribute blink_a default if_not(["eyes_d", "eyes_e", "nose5", "vshy"]):
     #         ConditionSwitch("persistent.enable_nbe", "_say_blink_t_a", True, "sprite_blank")
     #     attribute no_blink:
     #         "sprite_blank"
-
-image _say_blink_a:
-    alpha 0.0
-    renpy.random.randint(20, 100)*0.1
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_af.png"
-        0.065
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_af.png"
-        0.095
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        alpha 0.0
-        0.15
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_am.png"
-        0.015
-    repeat
-
-image _say_blink_t_a:
-    alpha 0.0
-    renpy.random.randint(30, 60)*0.1
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_t_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_t_af.png"
-        0.065
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_t_af.png"
-        0.095
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-    choice:
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_t_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        alpha 0.0
-        0.15
-        alpha 1.0
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-        "mod_assets/MPT/sayori/_blink_t_af.png"
-        0.035
-        "mod_assets/MPT/sayori/_blink_t_am.png"
-        0.015
-    repeat
